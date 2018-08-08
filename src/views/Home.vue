@@ -1,23 +1,22 @@
 <template>
-    <div class="home">
-        <img src="../assets/logo.png">
-        <GameList msg="Welcome to Your Vue.js App"/>
+    <div>
+        <game-list></game-list>
     </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import GameList from '@/components/GameList.vue'
+import HeaderMenu from '@/components/HeaderMenu.vue'
 
 export default {
   name: 'home',
   components: {
-    GameList
+    GameList,
+    HeaderMenu
   }
 }
 </script>
 <style lang="scss">
-    .home {
-        width: 750px;
-    }
+
 </style>
