@@ -1,58 +1,99 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
-  </div>
+    <div class="card">
+        <dl>
+            <dt class="card-img">
+                <img alt="img"
+                     :src="logo">
+            </dt>
+            <dd class="card-content">
+                <span class="card-name">{{name}}</span>
+                <span class="tit-start">
+                    <span>{{category}}</span>
+                    <i class="iconfont icon-star"></i>
+                    <span class="start">{{start}}</span>
+                </span>
+            </dd>
+        </dl>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'GameItem',
   props: {
-    msg: String
+    name: String,
+    category: String,
+    logo: String,
+    start: Number
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+    .card {
+        width: 46%;
+        height: 5rem;
+        margin: .2rem;
+        padding: .2rem;
+        float: left;
+        border-radius: .053333rem;
+        box-shadow: 0 0.026667rem 0.16rem rgba(0, 0, 0, .117647), 0 0.026667rem 0.106667rem rgba(0, 0, 0, .117647);
+        box-sizing: border-box;
+
+        .card-img {
+            display: block;
+            width: 226px;
+            height: 226px;
+            margin: 12px auto 0;
+            border-radius: 20px;
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                border-radius: 20px;
+            }
+        }
+
+        .card-content {
+            display: block;
+            padding: 20px 32px 0;
+            box-sizing: border-box;
+            width: 100%;
+            .card-name {
+                display: -webkit-box;
+                height: 60px;
+                font-size: 30px;
+                font-weight: 400;
+                box-sizing: border-box;
+                color: rgba(71, 74, 79, .87);
+                line-height: 72px;
+                white-space: normal;
+                overflow: hidden;
+            }
+            .tit-start {
+                width: 100%;
+                height: 36px;
+                font-size: 24px;
+                color: rgba(71, 74, 79, .54);
+                overflow: hidden;
+                display: table;
+                vertical-align: middle;
+
+                span {
+                    float: left;
+                }
+
+                span.start {
+                    float: right;
+                    margin-right: 4px;
+                }
+
+                .icon-star {
+                    float: right;
+                    font-size: 20px;
+                    color: rgb(66, 103, 178);
+                }
+            }
+        }
+    }
 </style>
