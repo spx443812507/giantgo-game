@@ -5,6 +5,7 @@
                    :logo="game.logo"
                    :category="game.category"
                    :start="game.start"
+                   :key="game.name"
                    @click.native="play(game)">
         </game-item>
     </div>

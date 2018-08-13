@@ -20,3 +20,4 @@ yarn-error.log*
 *.sln
 *.sw*
 /public/games/
+/package-lock.json
