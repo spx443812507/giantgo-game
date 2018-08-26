@@ -25,7 +25,8 @@ export default {
   methods: {
     play () {
       this.$router.push({
-        name: 'detail', params: {
+        name: 'detail',
+        query: {
           id: this.game.id
         }
       })
