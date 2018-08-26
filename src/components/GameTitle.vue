@@ -2,7 +2,7 @@
     <div class="game-title">
         <div class="flag"></div>
         <div class="title">{{title}}</div>
-        <div class="see-all">全部</div>
+        <div class="see-all" @click="jump">全部</div>
     </div>
 </template>
 
@@ -11,7 +11,12 @@ export default {
   name: 'GameTitle',
   props: {
     title: String,
-    link: String
+    linkName: String
+  },
+  methods: {
+    jump () {
+      this.$router.push({name: this.linkName})
+    }
   }
 }
 </script>
@@ -52,6 +57,10 @@ export default {
             padding: 0 32px;
             font-size: 28px;
             color: rgb(66, 103, 178);
+
+            &:active {
+                background: #efefef;
+            }
         }
     }
 </style>

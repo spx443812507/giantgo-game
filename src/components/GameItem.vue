@@ -1,16 +1,15 @@
 <template>
-    <div class="card">
+    <div class="card" @click="play">
         <dl>
             <dt class="card-img">
-                <img alt="img"
-                     :src="logo">
+                <img alt="img" :src="game.logo">
             </dt>
             <dd class="card-content">
-                <span class="card-name">{{name}}</span>
+                <span class="card-name">{{game.name}}</span>
                 <span class="tit-start">
-                    <span>{{category}}</span>
+                    <span>{{game.category}}</span>
                     <i class="iconfont icon-star"></i>
-                    <span class="start">{{start}}</span>
+                    <span class="start">{{game.start}}</span>
                 </span>
             </dd>
         </dl>
@@ -21,10 +20,16 @@
 export default {
   name: 'GameItem',
   props: {
-    name: String,
-    category: String,
-    logo: String,
-    start: Number
+    game: Object
+  },
+  methods: {
+    play () {
+      this.$router.push({
+        name: 'detail', params: {
+          id: this.game.id
+        }
+      })
+    }
   }
 }
 </script>

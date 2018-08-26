@@ -1,12 +1,8 @@
 <template>
     <div class="card-wrapper">
         <game-item v-for="game in games"
-                   :name="game.name"
-                   :logo="game.logo"
-                   :category="game.category"
-                   :start="game.start"
-                   :key="game.name"
-                   @click.native="play(game)">
+                   :game="game"
+                   :key="game.name">
         </game-item>
     </div>
 </template>
@@ -23,11 +19,7 @@ export default {
     GameItem
   },
   computed: {},
-  methods: {
-    play (game) {
-      window.location.href = game.url
-    }
-  }
+  methods: {}
 }
 </script>
 

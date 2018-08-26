@@ -1,11 +1,13 @@
 <template>
-    <div>
+    <div class="layout-home">
         <header-menu></header-menu>
-        <swiper></swiper>
-        <game-title title="热门游戏"></game-title>
-        <game-list :games="hotGames"></game-list>
-        <game-title title="最新游戏"></game-title>
-        <game-list :games="goodGames"></game-list>
+        <main>
+            <swiper></swiper>
+            <game-title title="热门游戏" link-name="hot"></game-title>
+            <game-list :games="hotGames"></game-list>
+            <game-title title="最新游戏" link-name="best"></game-title>
+            <game-list :games="bestGames"></game-list>
+        </main>
     </div>
 </template>
 
@@ -36,14 +38,14 @@ export default {
   computed: {
     ...mapGetters([
       'hotGames',
-      'goodGames'
+      'bestGames'
     ])
   },
   mounted () {
-
+    this.$store.dispatch('getHotGames')
+    this.$store.dispatch('getBestGames')
   }
 }
 </script>
 <style lang="scss">
-
 </style>
