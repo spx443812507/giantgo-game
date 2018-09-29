@@ -1,11 +1,11 @@
 <template>
     <header class="header">
         <div class="icon-btn">
-            <i class="iconfont icon-menu"></i>
+            <!--<i class="iconfont icon-menu"></i>-->
         </div>
-        <span class="title">Facebook Game</span>
+        <span class="title">GiantGo Game</span>
         <div class="icon-btn">
-            <i class="iconfont icon-share"></i>
+            <!--<i class="iconfont icon-share"></i>-->
         </div>
     </header>
 </template>
